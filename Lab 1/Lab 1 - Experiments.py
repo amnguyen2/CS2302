@@ -20,7 +20,6 @@ Purpose of program: The purpose of this program is to demonstrate the use of rec
 import matplotlib.pyplot as plt
 import numpy as np
 import math 
-
 #---------------------------------------------------------------------------------
 #PART 1: SQUARES ON CORNERS  -  EXPERIMENTAL
 #---------------------------------------------------------------------------------
@@ -48,7 +47,6 @@ draw_squares_rec(ax,0,0,100,5)
 ax.axis('off')
 ax.set_aspect(1.0)
 plt.show()
-
 
 #---------------------------------------------------------------------------------
 #PART 2: CASCADING CIRCLES  -  EXPERIMENTAL
@@ -91,7 +89,6 @@ draw_circles( ax, 4, [0,0],  100, .5)
 ax.set_aspect(1.0)
 ax.axis('off')
 plt.show()
-
 
 def draw_circles2(ax,n,center,r,w): 
     if n>0:
@@ -153,7 +150,6 @@ plt.show()
 #ax.axis('on')
 #plt.show()
 
-
 #---------------------------------------------------------------------------------
 #PART 4: SIX CIRCLES IN ONE  -  EXPERIMENTAL
 #---------------------------------------------------------------------------------
@@ -185,7 +181,6 @@ draw_circles( ax, 4, [0,0],  100)   #keep raising 'n' to find the program's limi
 ax.set_aspect(1.0)
 ax.axis('off')
 
-
 def draw_circles2(ax,n,center,r):
     if n>0: 
         r = r/4 #+1          
@@ -195,7 +190,6 @@ def draw_circles2(ax,n,center,r):
         #                                             +1
         ax.plot(x-r*3, y, color='k') 
         #          +1
-    
         
 fig, ax = plt.subplots() 
 draw_circles2( ax, 5, [0,0],  100)   
