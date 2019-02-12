@@ -12,6 +12,9 @@ Assignment:         Lab 1
 Instructor:         Fuentes, Olac
 T.A.:               Nath, Anindita 
 Last modified:      2/6/19
+
+Purpose of program: The purpose of this program is to demonstrate the use of recursion in 
+                    drawing shapes and fractals.
 """
 
 import matplotlib.pyplot as plt
