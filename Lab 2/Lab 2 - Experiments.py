@@ -1,6 +1,6 @@
 """
 Author:             Nguyen, Abram
-Assignment:         Lab 2
+Assignment:         Lab 2 - Experiment
 Course:             CS 2302 - Data Structures
 Instructor:         Fuentes, Olac
 T.A.:               Nath, Anindita 
