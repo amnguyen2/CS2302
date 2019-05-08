@@ -24,8 +24,16 @@ def Insert(T,newItem):
 #      maximum number.
 #  3. The right subtree is the maximum tree constructed from right part subarray divided by the
 #      maximum number.
-
-        
+def constructMaximumBinaryTree(nums):
+    if not nums:
+        return None
+    i = nums.index(max(nums))
+    node = BST(nums[i])
+    
+    node.left = constructMaximumBinaryTree(nums[:i]) # list left of maximum
+    node.right = constructMaximumBinaryTree(nums[i + 1:]) # list right of maximum
+    
+    return node
 
 ###############################################################################
 # Print a binary tree in an m*n 2D string array following these rules:
@@ -90,11 +98,10 @@ def height(T):
 
 ###############################################################################
 # Given a binary tree, return the inorder traversal of its nodes' values.
-def inorder(T): # python recursive solution, taken from leetcode
-    if T is None: # simplest case (base case)
+def inorder(T):
+    if T is None:
         return []
-    # find the leftmost subtree’s value, record it, then move to the right
-    return inorder(T.left) + [T.item] + inorder(T.right) # recursive definition
+    return inorder(T.left) + [T.item] + inorder(T.right)
 
 ###############################################################################
     
@@ -111,16 +118,12 @@ def inorder(T): # python recursive solution, taken from leetcode
 ###############################################################################
 ###############################################################################
 """ 
-T = None
-A = [5, 10, 2, 15, 3, 4, 20, 1]
-for a in A:
-    T = Insert(T,a)
-    
 # Problem 654. Maximum Binary Tree
-printTree(T)
+nums = [3,2,1,6,0,5]
+T = constructMaximumBinaryTree(nums)
 
 # Problem: 655 Print Binary Tree
-
+printTree(T)
 
 # Problem 94. Binary Tree Inorder Traversal
 #print("in-order traversal:", inorder(T))
