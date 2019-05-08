@@ -90,10 +90,11 @@ def height(T):
 
 ###############################################################################
 # Given a binary tree, return the inorder traversal of its nodes' values.
-def inorder(T):
-    if T is None:
+def inorder(T): # python recursive solution, taken from leetcode
+    if T is None: # simplest case (base case)
         return []
-    return inorder(T.left) + [T.item] + inorder(T.right)
+    # find the leftmost subtree’s value, record it, then move to the right
+    return inorder(T.left) + [T.item] + inorder(T.right) # recursive definition
 
 ###############################################################################
     
