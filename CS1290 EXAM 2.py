@@ -24,16 +24,16 @@ def Insert(T,newItem):
 #      maximum number.
 #  3. The right subtree is the maximum tree constructed from right part subarray divided by the
 #      maximum number.
-def constructMaximumBinaryTree(nums):
-    if not nums:
+def constructMaximumBinaryTree(nums): # leetcode solution
+    if not nums: # simplest problem (base case)
         return None
-    i = nums.index(max(nums))
-    node = BST(nums[i])
+    i = nums.index(max(nums)) # find the index of the max value in the list
+    T = BST(nums[i]) # create a node containing the max value
     
-    node.left = constructMaximumBinaryTree(nums[:i]) # list left of maximum
-    node.right = constructMaximumBinaryTree(nums[i + 1:]) # list right of maximum
+    T.left = constructMaximumBinaryTree(nums[:i]) # list left of max = left subtree
+    T.right = constructMaximumBinaryTree(nums[i + 1:]) # list right of max = right subtree
     
-    return node
+    return T
 
 ###############################################################################
 # Print a binary tree in an m*n 2D string array following these rules:
