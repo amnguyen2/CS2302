@@ -1,0 +1,63 @@
+runfile('C:/Users/Abram/Desktop/UTEP/Automata 3350/Homework15.py', wdir='C:/Users/Abram/Desktop/UTEP/Automata 3350')
+Input an arithmetic expression.
+Use only numbers 0-9 and choose from the following symbols: + - * / ( )
+
+> (2-3)*(3-4)+(8/4)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TRANSFORMING ARITHMETIC EXPRESSION TO POSTFIX FORM
+# stack -->  ['(']
+postfix -->  2
+# stack -->  ['(']
+# stack -->  ['(', '-']
+postfix -->  23
+postfix -->  23-
+# stack -->  ['(']
+# stack -->  ['(', ')']
+# stack -->  []
+# stack -->  ['*']
+# stack -->  ['*', '(']
+postfix -->  23-3
+# stack -->  ['*', '(']
+# stack -->  ['*', '(', '-']
+postfix -->  23-34
+postfix -->  23-34-
+# stack -->  ['*', '(']
+# stack -->  ['*', '(', ')']
+postfix -->  23-34-*
+# stack -->  []
+# stack -->  ['+']
+# stack -->  ['+', '(']
+postfix -->  23-34-*8
+# stack -->  ['+', '(']
+# stack -->  ['+', '(', '/']
+postfix -->  23-34-*84
+postfix -->  23-34-*84/
+# stack -->  ['+', '(']
+# stack -->  ['+', '(', ')']
+postfix -->  23-34-*84/+
+# stack -->  []
+
+The resulting postfix expression is...  23-34-*84/+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+EVALUATING POSTFIX EXPRESSION
+# stack -->  ['2']
+# stack -->  ['2', '3']
+operate -->  -
+# stack -->  [-1]
+# stack -->  [-1, '3']
+# stack -->  [-1, '3', '4']
+operate -->  -
+# stack -->  [-1, -1]
+operate -->  *
+# stack -->  [1]
+# stack -->  [1, '8']
+# stack -->  [1, '8', '4']
+operate -->  /
+# stack -->  [1, 2.0]
+operate -->  +
+# stack -->  [3]
+
+===================================================
+Th resulting equation is...
+(2-3)*(3-4)+(8/4) = 3
